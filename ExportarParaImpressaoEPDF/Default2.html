@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>    
+	<meta charset="utf-8" />
+    <style>
+        .form {
+          display: flex;
+          display: -webkit-flex;
+          width: 600px;
+        }
+
+        .form label{
+            -webkit-flex:1 1 auto;
+            flex:1 1 auto;
+        }
+
+        .form span{
+            -webkit-flex:1 1 auto;
+            flex:1 1 auto;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="form">
+            <label>Nome</label>
+            <label>Email</label>
+            <label>Texto</label>
+        </div>
+        <div class="form">
+            <span>bbb</span>
+            <span>aaa</span>
+            <span>ccc</span>
+        </div>
+    </div>
+    <div>
+        <a href="#" id="exportar" onclick="ExportarToPDF()" >Exportar</a>
+        <a href="" id="exportarHidden" >aasdsad</a>
+    </div>
+    <div id="editor"></div>
+
+    <div id="html-content-holder" style="background-color: #F0F0F1; color: #00cc65; width: 500px;
+        padding-left: 25px; padding-top: 10px;">
+        <div class="form">
+            <label>Nome</label>
+            <label>Email</label>
+            <label>Texto</label>
+        </div>
+        <div class="form">
+            <span>bbb</span>
+            <span>aaa</span>
+            <span>ccc</span>
+        </div>
+    </div>
+    <a id="btn-Preview-Image" href="#">Exportar</a>
+    <a id="btn-Convert-Html2Image" href="#">Download</a>
+    <div id="previewImage" style="display:none;"></div>
+
+    <!--<script src="js/jspdf.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://files.codepedia.info/uploads/iScripts/html2canvas.js"></script>
+    
+    <!--<script>
+        var element = $("#html-content-holder"); // global variable
+        var getCanvas; // global variable
+
+        $("#btn-Preview-Image").on('click', function () {
+            html2canvas(element, {
+                onrendered: function (canvas) {
+                    $("#previewImage").append(canvas);
+                    getCanvas = canvas;
+                }
+            });
+        });
+        $("#btn-Convert-Html2Image").on('click', function () {
+            var imgageData = getCanvas.toDataURL("image/png");
+            var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+            $("#btn-Convert-Html2Image").attr("download", "your_pic_name.png").attr("href", newData);
+        });
+
+        function ExportarToPDF()
+        {
+            var element = $("#content");
+            html2canvas(element, {
+                onrendered: function (canvas) {
+                    debugger
+                    var url = canvas.toDataURL("image/png", 1.0);
+                    var newUrl = url.replace(/^data:image\/png/, "data:application/octet-stream");
+                    $("#exportarHidden").attr("download", "your_pic_name.png").attr("href", newUrl);
+                }
+            });
+        }-->
+
+        //var doc = new jsPDF();
+        //var specialElementHandlers = {
+        //    '#editor': function (element, renderer) {
+        //        return true;
+        //    }
+        //};
+
+        //$('#exportar').click(function () {
+        //    doc.fromHTML($('#content').html(), 15, 15, {
+        //        'width': 170,
+        //        'elementHandlers': specialElementHandlers
+        //    });
+        //    doc.save('sample-file.pdf');
+        //});
+    </script>
+</body>
+</html>
